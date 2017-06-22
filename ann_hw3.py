@@ -15,9 +15,11 @@ e = [0.0, 0.0]
 for i in range(0, len(data), 4):
     for j in range(0, 2):
         a[j] = float(weight[2 * j]) * float(data[i]) + float(weight[2 * j + 1]) * float(data[i + 1]) + bias[j]
-        e[j] = data[i + j] - a[j]
+        e[j] = float(data[i + j]) - a[j]
     
     for j in range(0, 2):
         for k in range(0, 2):
-            weight[2 * j + k] += learning_rate * e[j] * data[i + k]
-        bias[2 * j + k] += learning_rate * e[j]
+            weight[2 * j + k] += learning_rate * float(e[j]) * float(data[i + k])
+        bias[j] += learning_rate * e[j]
+
+    print "Weight " + str(i / 4) + ":\n" + str(weight[0]) + "\t" + str(weight[1]) + "\n" + str(weight[2]) + "\t" + str(weight[3]) + "\n"
