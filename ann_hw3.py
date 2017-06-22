@@ -21,5 +21,6 @@ for i in range(0, len(data), 4):
         for k in range(0, 2):
             weight[2 * j + k] += learning_rate * float(e[j]) * float(data[i + k])
         bias[j] += learning_rate * e[j]
-
+    
     print "Weight " + str(i / 4 + 1) + ":\n" + str(weight[0]) + "\t" + str(weight[1]) + "\n" + str(weight[2]) + "\t" + str(weight[3]) + "\n"
+
