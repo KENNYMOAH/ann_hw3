@@ -23,5 +23,16 @@ for i in range(0, len(data), 4):
             weight[2 * j + k] += learning_rate * float(e[j]) * float(data[i + k])
         bias[j] += learning_rate * e[j]
     
-    print "Weight " + str(i / 4 + 1) + ":\n" + str(weight[0]) + "\t" + str(weight[1]) + "\n" + str(weight[2]) + "\t" + str(weight[3])
-    print "Bias " + str(i / 4 + 1) + ": [" + str(bias[0]) + " " + str(bias[1]) + "]"
+    # print "Weight " + str(i / 4 + 1) + ":\n" + str(weight[0]) + "\t" + str(weight[1]) + "\n" + str(weight[2]) + "\t" + str(weight[3])
+    # print "Bias " + str(i / 4 + 1) + ": [" + str(bias[0]) + " " + str(bias[1]) + "]"
+
+print "Learning complete successfully."
+training_data.close()
+
+try:
+    testing_data = open('testing_data.txt', 'r')
+
+except:
+    print "Can't find testing data. Please make sure testing_data.txt is under the same directory as this py file."
+    quit()
+
