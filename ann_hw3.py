@@ -56,6 +56,6 @@ for i in range(0, len(data), 2):
     elif (float(output[0]) >= 0.0 and float(output[1]) < 0.0):
         classes = 'D'
 
-    print "Class " + str(i / 2 + 1) + ": " + classes
+    print "Class" + ": " + classes
     for j in range(0, 2):
         output[j] = 0
